@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>화목하고 따뜻한 인사팀의 겨울나기 마니또</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- 로그인 화면 -->
+    <section id="login-screen" class="screen screen-login">
+      <div class="login-card">
+        <h1 class="app-title">
+          화목하고 따뜻한 인사팀의<br>겨울나기 마니또
+        </h1>
+        <p class="app-subtitle">
+          사내에서 발급된 마니또 전용 계정으로 로그인해주세요 🎄
+        </p>
+
+        <form id="login-form" class="login-form">
+          <label class="field">
+            <span class="field-label">이메일</span>
+            <input
+              type="email"
+              id="email"
+              required
+              autocomplete="email"
+              placeholder="you@ahnlab.com"
+            >
+          </label>
+
+          <label class="field">
+            <span class="field-label">비밀번호</span>
+            <input
+              type="password"
+              id="password"
+              required
+              autocomplete="current-password"
+              placeholder="비밀번호"
+            >
+          </label>
+
+          <p id="login-error" class="error-message" aria-live="polite"></p>
+
+          <!-- 마리오 스타일 버튼 -->
+          <button class="button" type="submit" id="login-button">
+            <span class="button-outline">
+              <span class="button-shadow">
+                <span class="button-inside">
+                  <span class="button-text visually-hidden">로그인하기</span>
+                  <span class="button-text-characters-container" aria-hidden="true"></span>
+                </span>
+              </span>
+            </span>
+          </button>
+        </form>
+
+        <p class="footer-hint">
+          ※ 계정은 사전에 인사팀에서 생성해둔 14개의 마니또 전용 계정만 사용 가능합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 마니또 결과 화면 -->
+    <section id="manitto-screen" class="screen screen-main hidden">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1 class="app-title small">
+            화목하고 따뜻한 인사팀의 겨울나기 마니또
+          </h1>
+          <p class="user-name" id="user-name"></p>
+        </div>
+        <button id="logout-button" class="logout-button">로그아웃</button>
+      </header>
+
+      <section class="content">
+        <div class="svg-wrapper">
+          <!-- === 토스터 SVG === -->
+          <!-- 그대로 붙여넣기 (id / 구조는 수정하지 않음) -->
+          <svg viewBox="0 0 948 948" aria-labelledby="uniqueTitleID uniqueDescID" role="img">
+            <title id="uniqueTitleID">Halloween toast</title>
+            <desc id="uniqueDescID">Click or touch the toaster button for a surprise!</desc>
+            <defs>
+              <linearGradient id="lightGradient" x1="480" x2="480" y1="584" y2="-.4" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f28e20"/>
+                <stop offset="1" stop-color="#f28e20" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="clip1">
+                <polygon points="0 0 948 0 547.39 569.06 521.63 583.5 295.63 521.19 275.82 521.1 0 0" fill="#231f20"/>
+              </clipPath>
+              <clipPath id="clip2">
+                <polygon points="0 0 948 0 580.63 550.44 564.31 559.13 338.5 497.06 195.67 96.33" fill="#000"/>
+              </clipPath>
+            </defs>
+            <g id="bg" >
+              <rect width="948" height="948" fill="#653a95"/>
+              <g id="stars" opacity=".66" style="mix-blend-mode:overlay">
+                <polygon fill="#fff" points="166.94 149.87 156.77 147.09 148.71 153.89 148.21 143.36 139.25 137.8 149.11 134.07 151.63 123.83 158.23 132.05 168.75 131.28 162.96 140.1 166.94 149.87" />
+                <polygon fill="#fff" points="780.48 117.74 769.21 104.37 751.8 106.08 761.03 91.22 754.02 75.19 771 79.38 784.08 67.76 785.35 85.21 800.44 94.06 784.24 100.65 780.48 117.74" />
+                <polygon fill="#fff" points="750.48 327.88 740.69 325.45 733.14 332.12 732.44 322.07 723.75 316.95 733.1 313.17 735.28 303.33 741.76 311.05 751.8 310.08 746.46 318.63 750.48 327.88" />
+                <polygon fill="#fff" points="229.72 321.56 226.68 315.4 219.88 314.41 224.8 309.62 223.64 302.85 229.72 306.04 235.8 302.85 234.64 309.62 239.56 314.41 232.76 315.4 229.72 321.56" />
+                <polygon fill="#fff" points="131.53 416.88 119.48 417.76 113.37 428.18 108.82 416.99 97.02 414.4 106.25 406.61 105.07 394.59 115.33 400.96 126.4 396.12 123.51 407.85 131.53 416.88" />
+                <polygon fill="#fff" points="806.3 451.39 799.03 450.88 794.48 456.58 792.72 449.5 785.9 446.94 792.08 443.08 792.41 435.8 797.99 440.49 805.02 438.55 802.29 445.31 806.3 451.39" />
+                <polygon fill="#fff" points="396.4 114.05 391.03 108.9 383.74 110.41 386.98 103.71 383.29 97.25 390.67 98.25 395.68 92.75 397 100.07 403.78 103.14 397.22 106.66 396.4 114.05" />
+              </g>
+            </g>
+            <ellipse id="shadow"cx="458.88" cy="764.02" fill="#231f20" opacity=".33" rx="336.2" ry="110.55" style="mix-blend-mode:multiply"/>
+            <g id="toaster">
+              <path id="toaster-bg" fill="#1f98d5" d="M675.59,770.18a57.86,57.86,0,0,1-17.65,12.57c-33.32,16.42-50.46,24.78-73.85,31.91-10.57,3.23-19.27,5.4-30.36,5.76a86.44,86.44,0,0,1-21.67-1.67C521.19,816.2,281,741,259.52,733.67c-.8-.28-14.44-6.42-18-9.84C239.22,721.65,229,713,229,696.75c0-36.5,5.73-61.29,16.74-100.75,12.57-45,18.83-69,36.44-92.61,13.49-18.1,34.34-23.45,41.76-24.08a57.45,57.45,0,0,1,13.7,1l269,72.67c3.82.76,3.82.76,10.21,2.45a57.17,57.17,0,0,1,15.84,6.46c8.28,5.1,11.44,11,14.12,16C657,597,668.51,620.42,677.61,648.47a389.6,389.6,0,0,1,15.14,65.37c.27,8.11.08,27.14-8.47,43.72A53.2,53.2,0,0,1,675.59,770.18Z"/>
+              <path id="toaster-stroke2" fill="none" stroke="#29123e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67" d="M598,563.5c-38.13,18.5-38.39,22-59.95,111.5-15.16,62.9-20.58,119.5-2.58,133.5" opacity=".66"/>
+              <g id="toaster-timer-track">
+                <rect width="13.09" height="129.5" x="603.5" y="580" fill="#231f20" opacity=".66" rx="6.25" ry="6.25" style="mix-blend-mode:multiply"/>
+                <rect width="13.09" height="129.5" x="603.5" y="580" fill="none" stroke="#29123d" stroke-miterlimit="10" stroke-width="4.25" rx="6.25" ry="6.25"/>
+              </g>
+              <g id="timer">
+                <path id="timer-button" d="M627.13,694.22l-34.61,10.92c-6.12,1.93-11.44-1.18-11.82-6.9l-.17-2.6c-.39-5.73,4.31-12,10.43-13.92l34.61-10.92c6.12-1.93,11.44,1.18,11.82,6.9l.18,2.6C638,686,633.25,692.29,627.13,694.22Z" fill="#f28e20" stroke="#29123e" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.25"/>
+                <path d="M621.28,680.13a134,134,0,0,1-19.94,6.34c-2.6.61-5.31,1.17-7.48,2.73s-3.68,4.42-2.77,6.94" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="11.34" opacity="0.66" style="mix-blend-mode: overlay"/>
+              </g>
+              <g id="knob">
+                <g id="knob-shadow">
+                  <path d="M637.27,754.75c-.93,12.76-9.75,20.64-10.3,21-1.66.93-9.33,2.48-15.74,2.3-8.26-.23-17.44-4.87-21-13.25a21.44,21.44,0,0,1-1.63-10c.94-12.84,12.6-24.25,26-24.25,5.63,0,11.91,0,13,.58,2.3,1.2,5.36,7.36,8,13.67A23.12,23.12,0,0,1,637.27,754.75Z" fill="#231f20" opacity="0.66" style="mix-blend-mode: multiply"/>
+                  <path d="M637.27,754.75c-.93,12.76-9.75,20.64-10.3,21-1.66.93-9.33,2.48-15.74,2.3-8.26-.23-17.44-4.87-21-13.25a21.44,21.44,0,0,1-1.63-10c.94-12.84,12.6-24.25,26-24.25,5.63,0,11.91,0,13,.58,2.3,1.2,5.36,7.36,8,13.67A23.12,23.12,0,0,1,637.27,754.75Z" fill="none" stroke="#29123d" stroke-miterlimit="10" stroke-width="4.25"/>
+                </g>
+                <g id="knob-top">
+                  <ellipse id="knob-main" cx="621.34" cy="753.75" rx="24.82" ry="22.8" transform="translate(-278.95 374.69) rotate(-27.67)" fill="#ffdd15" stroke="#29123e" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.25"/>
+                  <path id="knob-highlight2" d="M623.35,766.27a12.55,12.55,0,0,0,6-.4" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="11.34" style="mix-blend-mode: overlay"/>
+                  <path id="knob-highlight1" d="M629.56,743.14a26,26,0,0,0-8.92-3.07c-3.15-.32-6.57.55-8.64,2.94a12.47,12.47,0,0,0-2.45,5.77,34.76,34.76,0,0,0-.17,13" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="11.34" style="mix-blend-mode: overlay"/>
+                </g>
+              </g>
+              <g id="bats" opacity=".66" style="mix-blend-mode:multiply">
+                <path id="bat2" fill="#29123d" d="M255.15,711.45c-2-1.24,6.37-36,21.47-40,19.23-5.1,24.9,6.44,29.45,4.09,3.31-1.71,2.94-19.6,19.1-29.15,12.25-7.23,35.88,4.38,35.44,5.83-.31,1-5.6-.73-11.11,2.11-6.44,3.32-7,11.34-10.49,13.86-2.95,2.13-4.88-2.31-12.22,2.68-5.28,3.6-2.8,7-5.36,10-1.82,2.14-7.24-8.32-16-.19-5.71,5.3-5,11-7.58,11.14-3.07.16-5.66-3.12-9.43-2.62a7.56,7.56,0,0,0-4,2.3c-2.91,2.71-4.26,9.43-6.47,10.57s-4.56-4.88-10.47-3C260.26,701.3,256.31,712.16,255.15,711.45Z" />
+                <path id="bat1" fill="#29123d" d="M431.94,631.57c1.57-2.26,36.18-1,38.08,13.25,2.42,18.17-10.3,26.21-8.55,30.28,1.27,3,19.77-1.09,27.22,13.11,5.66,10.75-9.8,36.76-11.22,36.61-1-.1,1.58-5.74-.54-10.67-2.48-5.75-10.66-4.68-12.74-7.64-1.76-2.51,3.1-5.35-1-11.66-2.93-4.54-6.77-1.37-9.52-3.31-1.94-1.37,9.65-8.94,2.55-16-4.62-4.62-10.61-2.72-10.37-5.29.29-3,4.06-6.3,4.1-10a4.9,4.9,0,0,0-1.79-3.49c-2.37-2.36-9.1-2.32-9.95-4.3s5.71-5.56,4.68-11.09C441.65,634.6,431,632.87,431.94,631.57Z" />
+              </g>
+              <g id="trays">
+                <polygon id="trays-bg2" fill="#e9578f" points="521.68 585.68 289.67 521.81 316.27 507.98 548.25 570.86 521.68 585.68"/>
+                <polygon id="trays-bg1" fill="#e9578f" points="564.62 561.48 332.62 497.6 358.21 484.77 590.19 547.65 564.62 561.48"/>
+                <polygon id="trays-shadow2" fill="#a42e8d" points="291.67 521.83 316.33 528.17 316.33 508.67 291.67 521.83"/>
+                <polygon id="trays-shadow1" fill="#a42e8d" points="332.62 498.17 356.28 504.5 356.28 485 332.62 498.17"/>
+                <polygon id="trays-stroke2" fill="none" stroke="#29123e" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.25" points="564.62 561.48 332.62 497.6 358.21 484.77 590.19 547.65 564.62 561.48"/>
+                <polygon id="trays-stroke1" fill="none" stroke="#29123e" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.25" points="521.68 585.68 289.67 521.81 316.27 507.98 548.25 570.86 521.68 585.68"/>
+              </g>
+              <path id="toaster-stroke" fill="none" stroke="#29123e" stroke-miterlimit="10" stroke-width="8.5" d="M675.59,770.18a57.86,57.86,0,0,1-17.65,12.57c-33.32,16.42-50.46,24.78-73.85,31.91-10.57,3.23-19.27,5.4-30.36,5.76a86.44,86.44,0,0,1-21.67-1.67C521.19,816.2,281,741,259.52,733.67c-.8-.28-14.44-6.42-18-9.84C239.22,721.65,229,713,229,696.75c0-36.5,5.73-61.29,16.74-100.75,12.57-45,18.83-69,36.44-92.61,13.49-18.1,34.34-23.45,41.76-24.08a57.45,57.45,0,0,1,13.7,1l269,72.67c3.82.76,3.82.76,10.21,2.45a57.17,57.17,0,0,1,15.84,6.46c8.28,5.1,11.44,11,14.12,16C657,597,668.51,620.42,677.61,648.47a389.6,389.6,0,0,1,15.14,65.37c.27,8.11.08,27.14-8.47,43.72A53.2,53.2,0,0,1,675.59,770.18Z"/>
+              <g id="toaster-highlights" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="11.34">
+                <path d="M517.27,698.05a68,68,0,0,1-4,13.12" opacity=".66" style="mix-blend-mode:overlay"/>
+                <path d="M480.44,595l33.22,9c3.18.86,6.45,1.77,9.06,3.78,6.27,4.83,6.63,14,6.1,21.93A290.84,290.84,0,0,1,523.65,668" opacity=".66" style="mix-blend-mode:overlay"/>
+                <path d="M297.92,545.46c-10.38,5.22-16.71,16-21.52,26.54A199,199,0,0,0,260,630.41" opacity=".66" style="mix-blend-mode:overlay"/>
+              </g>
+            </g>
+            <g id="lights" style="mix-blend-mode:soft-light">
+              <polygon id="light1" opacity="0" fill="url(#lightGradient)" points="114.28 0 338.5 497.06 564.31 559.13 580.63 550.44 937.57 0 114.28 0" />
+              <polygon id="light2" opacity="0" fill="url(#lightGradient)" points="49.28 0 295.63 521.19 521.63 583.5 542.8 571.78 911.58 -0.41 49.28 0" />
+            </g>
+            <g id="toast-clip" clip-path="url(#clip1)">
+              <g id="toast">
+                <g id="right-arm">
+                  <path d="M303.82,644.41c-8.17-3.7-17.54-5.2-26.67-.61-6.8,3.42-14.93,19.9-13.22,28.43,3.86,19.18,26.14,48.81,34.46,56.55" fill="#f28e20" stroke="#fdd8b6" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8.5"/>
+                  <path d="M301.65,667.09c-6.88-11.18-23.54-16.45-29.54-13.58-8.49,4.07-10.08,16.17-7.19,28.24,4.55,19,21.74,47.88,30.3,55.25" fill="#f28e20" stroke="#fdd8b6" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8.5"/>
+                </g>
+                <path id="body" d="M298.2,675.94C283.85,773,297.2,831.83,313,835.5c22.69,5.28,27.13-1.59,33.37.5,8.4,2.81,9.32,15,35.42,22,25.72,6.9,33.56-4.33,46-1.69s11,16.85,37.5,19c13.82,1.12,20,.8,30-2.09,10.63-3.07,19-8,22.22-10.58,0,0,5.11-3.71,8-12.17,1-2.88,19.13-155.46-15.08-221.79-12.88-25-37.19-53.29-113.88-56.67C308.36,568.12,300.05,663.43,298.2,675.94Z" fill="#f28e20" stroke="#fdd8b6" stroke-miterlimit="10" stroke-width="8.5"/>
+                <path id="toast-stroke" d="M509.64,850c7.86-124,3.34-205.06-31.92-234-16.23-13.3-50.72-27.5-95-27.5-16.1,0-46.36,3.15-55,14.17" fill="none" stroke="#fdd8b6" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.67"/>
+                <g id="left-arm">
+                  <path d="M528.45,684c19.38-4.32,27.44-3.34,34,.51,8,4.67,9.74,17.4,7.61,24.61-6.07,20.56-14.68,36.29-39.66,55.62-4.47,3.45-9.93,2.87-13.12,3.27" fill="#f28e20"/>
+                  <path d="M528.45,684c19.38-4.32,27.44-3.34,34,.51,8,4.67,8.54,17.15,7.61,24.61-2.27,18.17-28.07,48.55-39.66,55.62" fill="#f28e20" stroke="#fdd8b6" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8.5"/>
+                  <path d="M506.39,696.42c9.58-10.2,24.45-15,32.8-12.39,11.85,3.72,14.06,14.76,10,25.77-6.34,17.31-29.3,46.7-41.24,53.42" fill="#f28e20" stroke="#fdd8b6" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8.5"/>
+                </g>
+                <g id="face">
+                  <path id="eye-right" d="M372.82,680.21c0,10.66-6.56,15.8-14.66,15.8S345,691.62,343.5,685.48C340.92,675,343.5,669,354.84,660c4.17-3.27,11.63-1.94,13.24-.5C372.42,663.4,372.82,678.08,372.82,680.21Z" fill="#fdd8b6"/>
+                  <path id="eye-left" d="M429.21,691.63c0,11.16,6.41,16.54,14.31,16.54s12.84-4.6,14.32-11c2.52-10.95,0-17.29-11.07-26.63-4.07-3.43-11.36-2-12.94-.53C429.59,674,429.21,689.39,429.21,691.63Z" fill="#fdd8b6"/>
+                  <path id="mouth1" d="M379.1,715.1c-.6,12.06,9.83,18.93,15.65,19.44,8,.7,16.84-2.56,18.88-15.66" fill="none" stroke="#fdd8b6" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.5"/>
+                  <path id="mouth2" opacity="0" d="M382,709.67c4.63-.17,30.65,2,35,4.33,4,2.13-1.62,17.5-17.67,18.67-9.51.69-18.87-6.67-19.66-14.67C379.59,717.25,377.66,709.82,382,709.67Z" fill="#fdd8b6"/>
+                </g>
+              </g>
+            </g>
+            <polygon id="flash2" opacity="0" fill="url(#lightGradient)" points="114.28 0 338.5 497.06 564.31 559.13 580.63 550.44 937.57 0 114.28 0" />
+            <polygon id="flash1" opacity="0" fill="url(#lightGradient)" points="49.28 0 295.63 521.19 521.63 583.5 542.8 571.78 911.58 -0.41 49.28 0" />
+            <g id="sparkles">
+              <g opacity="0">
+                <line id="line2" x1="266.94" y1="141.04" x2="287.35" y2="141.04" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+                <line id="line1" x1="277.14" y1="127.12" x2="277.14" y2="154.95" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+              </g>
+              <path opacity="0" d="M283,233.65c5.25-3.08,5.71-15.31,5.68-20.32,0-5.79.33,17.93,4.79,19.47,2.65.92,4.68.74,3.93,2.34l-2,.57h0c-7.11,0-5.13,19.8-5.94,23.68-.08.4-.26,1.77-.56,1.52s-.47-.13-.61-1.67c-.67-7.45,1.49-23.55-6.15-23.55-.34,0-3.12.08-3.16-.46S281.78,234.36,283,233.65Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4.25"/>
+              <g opacity="0">
+                <line x1="499.44" y1="183.23" x2="516" y2="183.23" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+                <line x1="507.72" y1="171.94" x2="507.72" y2="194.52" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+              </g>
+              <path opacity="0" d="M463.23,102.08c5.52-2.19,6-10.89,6-14.45,0-4.12.35,12.75,5,13.85,2.79.65,4.93.52,4.14,1.66l-2.14.4h0c-7.48,0-5.4,14.08-6.25,16.84-.09.28-.27,1.26-.6,1.08s-.49-.09-.63-1.19c-.71-5.29,1.57-16.74-6.47-16.74-.35,0-3.28,0-3.33-.33S462,102.59,463.23,102.08Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4.25"/>
+              <path opacity="0" d="M567.57,225.62c9-3.56,9.76-17.7,9.71-23.49,0-6.69.56,20.72,8.18,22.51,4.53,1.06,8,.85,6.73,2.7l-3.49.66h0c-12.16,0-8.77,22.89-10.15,27.37-.15.46-.44,2-1,1.75-.31-.17-.8-.14-1-1.93C575.39,246.59,579.09,228,566,228c-.58,0-5.34.09-5.41-.53S565.51,226.44,567.57,225.62Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4.25"/>
+              <g opacity="0">
+                <line x1="499.44" y1="331.35" x2="519.85" y2="331.35" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+                <line x1="509.65" y1="317.43" x2="509.65" y2="345.26" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+              </g>
+            </g>
+            <g id="hand" opacity="0">
+              <path fill="#ffdd15" d="M820,761s.3,46.83,0,46c-40.33,0-55.74.26-63,0-8.41-.3-7.6-12.64-9.17-14.5-2-2.42-4.84-1.59-6.33-5.67-3.42-9.36-1.92-20.07-1.5-26.16l-27.17-.17c-9.08-2-10.66-15.5-.33-18.83l40.33.33c-11.45-20,6.54-20.12,13.92-13.87,15.39,13,19.08,27.87,38.25,31.54C812.55,761.11,815.82,760.74,820,761Z"/>
+              <line x1="740" x2="755.71" y1="760.67" y2="760.67" fill="none" stroke="#d3a14f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+              <line x1="740" x2="757.71" y1="775.08" y2="775.08" fill="none" stroke="#d3a14f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+              <line x1="744.97" x2="760" y1="790.08" y2="790.08" fill="none" stroke="#d3a14f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67"/>
+              <path fill="#d3a14f" d="M780.07,745a107.14,107.14,0,0,0-12.57-14.72c-7.3-6.87-25-6.79-14.26,14.72"/>
+              <path fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5.67" d="M820,761s.3,46.83,0,46c-40.33,0-55.74.26-63,0-8.41-.3-7.91-12.42-9.17-14.5-1.45-2.42-5.7-3.12-6.33-5.67-2.38-9.67-1.92-20.07-1.5-26.16l-27.17-.17c-9.08-2-10.66-15.5-.33-18.83l40.33.33c-11.45-20,6.54-20.12,13.92-13.87,15.39,13,19.08,27.87,38.25,31.54C812.55,761.11,815.82,760.74,820,761Z"/>
+            </g>
+            <ellipse id="button-trigger" opacity="0" cx="617.59" cy="754.26" rx="36.42" ry="29.88" fill="#fff"/>
+          </svg>
+        </div>
+
+        <div class="result-wrapper">
+          <div id="result-card" class="result-card">
+            <p class="result-label">당신의 마니또는...</p>
+            <p class="result-name" id="manitto-name">-</p>
+            <p class="result-caption">
+              조용히 잘 살펴보고, 따뜻한 겨울 보내게 도와주세요 ☃️
+            </p>
+          </div>
+          <p class="result-hint">
+            토스터의 노란 다이얼을 눌러 마니또를 확인해 보세요!
+          </p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js" crossorigin="anonymous"></script>
+
+  <!-- 메인 로직 -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
