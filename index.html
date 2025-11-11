@@ -9,76 +9,51 @@
 <body>
   <main class="app">
 
-    <!-- 로그인 화면 -->
-    <section id="login-screen" class="screen screen-login">
-      <div class="login-card">
+    <!-- 시작 화면 (로그인 대신 버튼만) -->
+    <section id="start-screen" class="screen screen-start">
+      <div class="start-card">
         <h1 class="app-title">
           화목하고 따뜻한 인사팀의<br>겨울나기 마니또
         </h1>
         <p class="app-subtitle">
-          사내에서 발급된 마니또 전용 계정으로 로그인해주세요 🎄
+          아래 버튼을 눌러 마니또를 뽑아볼까요? 🎄
         </p>
 
-        <form id="login-form" class="login-form">
-          <label class="field">
-            <span class="field-label">이메일</span>
-            <input
-              type="email"
-              id="email"
-              required
-              autocomplete="email"
-              placeholder="you@ahnlab.com"
-            >
-          </label>
-
-          <label class="field">
-            <span class="field-label">비밀번호</span>
-            <input
-              type="password"
-              id="password"
-              required
-              autocomplete="current-password"
-              placeholder="비밀번호"
-            >
-          </label>
-
-          <p id="login-error" class="error-message" aria-live="polite"></p>
-
-          <!-- 마리오 스타일 버튼 -->
-          <button class="button" type="submit" id="login-button">
-            <span class="button-outline">
-              <span class="button-shadow">
-                <span class="button-inside">
-                  <span class="button-text visually-hidden">로그인하기</span>
-                  <span class="button-text-characters-container" aria-hidden="true"></span>
-                </span>
+        <!-- 마리오 느낌 버튼 -->
+        <button class="button" type="button" id="start-button">
+          <span class="button-outline">
+            <span class="button-shadow">
+              <span class="button-inside">
+                <span class="button-text visually-hidden">마니또 뽑기 시작하기</span>
+                <span class="button-text-characters-container" aria-hidden="true"></span>
               </span>
             </span>
-          </button>
-        </form>
+          </span>
+        </button>
 
         <p class="footer-hint">
-          ※ 계정은 사전에 인사팀에서 생성해둔 14개의 마니또 전용 계정만 사용 가능합니다.
+          ※ 지금은 테스트 모드입니다. 버튼을 누르면 토스터 화면으로 이동해요.
         </p>
       </div>
     </section>
 
-    <!-- 마니또 결과 화면 -->
+    <!-- 마니또 추첨 화면 -->
     <section id="manitto-screen" class="screen screen-main hidden">
       <header class="top-bar">
         <div class="top-bar-left">
           <h1 class="app-title small">
             화목하고 따뜻한 인사팀의 겨울나기 마니또
           </h1>
-          <p class="user-name" id="user-name"></p>
+          <p class="subtitle-small">
+            토스터의 노란 다이얼을 눌러 마니또를 확인해 보세요!
+          </p>
         </div>
-        <button id="logout-button" class="logout-button">로그아웃</button>
       </header>
 
       <section class="content">
         <div class="svg-wrapper">
-          <!-- === 토스터 SVG === -->
-          <!-- 그대로 붙여넣기 (id / 구조는 수정하지 않음) -->
+          <!-- ==== 토스터 SVG 전체 ==== -->
+          <!-- (원본 그대로, id 등 수정 없음) -->
           <svg viewBox="0 0 948 948" aria-labelledby="uniqueTitleID uniqueDescID" role="img">
             <title id="uniqueTitleID">Halloween toast</title>
             <desc id="uniqueDescID">Click or touch the toaster button for a surprise!</desc>
@@ -209,11 +184,11 @@
             <p class="result-label">당신의 마니또는...</p>
             <p class="result-name" id="manitto-name">-</p>
             <p class="result-caption">
-              조용히 잘 살펴보고, 따뜻한 겨울 보내게 도와주세요 ☃️
+              조용히 잘 살펴보고, 따뜻한 겨울을 같이 보내주세요 ☃️
             </p>
           </div>
           <p class="result-hint">
-            토스터의 노란 다이얼을 눌러 마니또를 확인해 보세요!
+            노란 다이얼을 클릭하면 토스트와 함께 마니또 이름이 나타납니다.
           </p>
         </div>
       </section>
@@ -224,7 +199,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js" crossorigin="anonymous"></script>
 
-  <!-- 메인 로직 -->
-  <script type="module" src="js/main.js"></script>
+  <!-- 메인 스크립트 -->
+  <script src="js/main.js"></script>
 </body>
 </html>
