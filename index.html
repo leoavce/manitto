@@ -53,7 +53,6 @@
       <section class="content">
         <div class="svg-wrapper">
           <!-- ==== 토스터 SVG 전체 ==== -->
-          <!-- (원본 그대로, id 등 수정 없음) -->
           <svg viewBox="0 0 948 948" aria-labelledby="uniqueTitleID uniqueDescID" role="img">
             <title id="uniqueTitleID">Halloween toast</title>
             <desc id="uniqueDescID">Click or touch the toaster button for a surprise!</desc>
@@ -135,17 +134,35 @@
                 </g>
                 <path id="body" d="M298.2,675.94C283.85,773,297.2,831.83,313,835.5c22.69,5.28,27.13-1.59,33.37.5,8.4,2.81,9.32,15,35.42,22,25.72,6.9,33.56-4.33,46-1.69s11,16.85,37.5,19c13.82,1.12,20,.8,30-2.09,10.63-3.07,19-8,22.22-10.58,0,0,5.11-3.71,8-12.17,1-2.88,19.13-155.46-15.08-221.79-12.88-25-37.19-53.29-113.88-56.67C308.36,568.12,300.05,663.43,298.2,675.94Z" fill="#f28e20" stroke="#fdd8b6" stroke-miterlimit="10" stroke-width="8.5"/>
                 <path id="toast-stroke" d="M509.64,850c7.86-124,3.34-205.06-31.92-234-16.23-13.3-50.72-27.5-95-27.5-16.1,0-46.36,3.15-55,14.17" fill="none" stroke="#fdd8b6" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.67"/>
+
+                <!-- 왼팔 -->
                 <g id="left-arm">
                   <path d="M528.45,684c19.38-4.32,27.44-3.34,34,.51,8,4.67,9.74,17.4,7.61,24.61-6.07,20.56-14.68,36.29-39.66,55.62-4.47,3.45-9.93,2.87-13.12,3.27" fill="#f28e20"/>
                   <path d="M528.45,684c19.38-4.32,27.44-3.34,34,.51,8,4.67,8.54,17.15,7.61,24.61-2.27,18.17-28.07,48.55-39.66,55.62" fill="#f28e20" stroke="#fdd8b6" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8.5"/>
                   <path d="M506.39,696.42c9.58-10.2,24.45-15,32.8-12.39,11.85,3.72,14.06,14.76,10,25.77-6.34,17.31-29.3,46.7-41.24,53.42" fill="#f28e20" stroke="#fdd8b6" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8.5"/>
                 </g>
+
+                <!-- 얼굴 -->
                 <g id="face">
                   <path id="eye-right" d="M372.82,680.21c0,10.66-6.56,15.8-14.66,15.8S345,691.62,343.5,685.48C340.92,675,343.5,669,354.84,660c4.17-3.27,11.63-1.94,13.24-.5C372.42,663.4,372.82,678.08,372.82,680.21Z" fill="#fdd8b6"/>
                   <path id="eye-left" d="M429.21,691.63c0,11.16,6.41,16.54,14.31,16.54s12.84-4.6,14.32-11c2.52-10.95,0-17.29-11.07-26.63-4.07-3.43-11.36-2-12.94-.53C429.59,674,429.21,689.39,429.21,691.63Z" fill="#fdd8b6"/>
                   <path id="mouth1" d="M379.1,715.1c-.6,12.06,9.83,18.93,15.65,19.44,8,.7,16.84-2.56,18.88-15.66" fill="none" stroke="#fdd8b6" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.5"/>
                   <path id="mouth2" opacity="0" d="M382,709.67c4.63-.17,30.65,2,35,4.33,4,2.13-1.62,17.5-17.67,18.67-9.51.69-18.87-6.67-19.66-14.67C379.59,717.25,377.66,709.82,382,709.67Z" fill="#fdd8b6"/>
                 </g>
+
+                <!-- 토스트 위 이름 텍스트 -->
+                <text
+                  id="toast-name-text"
+                  x="400"
+                  y="640"
+                  text-anchor="middle"
+                  fill="#3a1b00"
+                  font-size="26"
+                  font-weight="700"
+                  font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+                  opacity="0"
+                >
+                </text>
               </g>
             </g>
             <polygon id="flash2" opacity="0" fill="url(#lightGradient)" points="114.28 0 338.5 497.06 564.31 559.13 580.63 550.44 937.57 0 114.28 0" />
