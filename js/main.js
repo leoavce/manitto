@@ -83,19 +83,30 @@ function setupToasterAnimation() {
   const toastBtn = document.getElementById("button-trigger");
   const resultCardEl = document.getElementById("result-card");
   const manittoNameEl = document.getElementById("manitto-name");
+  const toastNameTextEl = document.getElementById("toast-name-text");
 
-  if (!toastClip || !toastBtn || !resultCardEl || !manittoNameEl) return;
+  if (!toastClip || !toastBtn || !resultCardEl || !manittoNameEl || !toastNameTextEl) return;
 
   let isPlaying = false;
 
-  // 결과 카드 애니메이션 표시
-  function showResultCard(name) {
-    manittoNameEl.textContent = name || "-";
+  // 결과 카드 + 토스트 위 텍스트 애니메이션 표시
+  function showResult(name) {
+    const displayName = name || "-";
 
+    // 하단 카드 텍스트
+    manittoNameEl.textContent = displayName;
     gsap.fromTo(
       resultCardEl,
       { opacity: 0, y: 12 },
       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+    );
+
+    // 토스트 위 SVG 텍스트
+    toastNameTextEl.textContent = displayName;
+    gsap.fromTo(
+      toastNameTextEl,
+      { opacity: 0, scale: 0.8, transformOrigin: "50% 50%" },
+      { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.8)" }
     );
   }
 
@@ -155,6 +166,8 @@ function setupToasterAnimation() {
     gsap.to("#knob-main", { fill: "#ffdd15" });
     gsap.to("#knob-highlight2", { duration: 0.2, opacity: 1 });
     gsap.to("#knob-highlight1", { duration: 0.2, opacity: 1 });
+    // 다음 클릭을 위해 이름 텍스트는 다시 살짝 숨겨두기
+    gsap.set(toastNameTextEl, { opacity: 0 });
     isPlaying = false;
   }
 
@@ -250,7 +263,8 @@ function setupToasterAnimation() {
           ">"
         )
         .call(() => {
-          showResultCard(selectedName);
+          // 토스트가 위로 팡 튀어나온 타이밍 이후에 이름 표시
+          showResult(selectedName);
         });
     }
   });
